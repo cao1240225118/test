@@ -1,0 +1,40 @@
+body,h1,h2,h3,p,span,em,i,img,a,li,ul,div,tr,td,th{ margin: 0 auto; padding: 0}
+li,a,i { list-style: none; text-decoration: none; font-style: normal;}
+img,label,h1,h2 { display: block;}
+input { outline: none; }
+input::-webkit-input-placeholder { font-size: .34rem; color:#000;}
+/*body { margin: 0; padding:0; height: 100%; background:#f5e9c3  url(../images/bg.jpg) no-repeat top center; background-size: cover;}*/
+
+/*
+    100vw是设备的宽度，除以3.2可以让1rem的大小在iPhone5下等于100px；
+    我们以iPhone5为例，iPhone5的物理设备为100vw，假如设计图是320*568，又因为1rem=100px;所以 设计图为3.2rem宽度；那要完美复刻设计图到iPhone5机器上，它的根元素html的字体值公式为：
+        font = 100vw/3.2;
+    但是设计图的一般是640开始的，所以应该是font = 100vw/6.4;故多除以一个2；
+    那为什么要用100vw去除以呢？
+    其实100vw是等价于js中window.innerWidth的，它通过css计算着物理设备的宽度；
+*/
+
+/*设计稿尺寸为：640*1136，要考虑微信顶部60px的空间。所以设计稿的高度应该是1066px;*/
+html{
+    font-size: calc(100vw/3.2/2);
+    height: 100%;
+}
+.img{width:50%; height:500px;background:#f5e9c3 url(../images/book1.jpg) no-repeat center bottom; background-size:100% auto;}
+/*整个css中，1rem等于原设计稿750*1200中100px*/
+/*第一页 page1*/
+#page1 img{display: block; width: 100%;}
+.portrait body div { width: 100%; }
+.landscape body div { width: 50%; }
+
+
+
+
+
+
+
+
+
+
+
+
+

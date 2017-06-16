@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=no" />
+    <title>童游读书月</title>
+    <link rel="stylesheet" type="text/css" href="http://www.tongyou.la/kap/1.67/styles/kap.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css?v1">
+    <!--百度统计代码-->
+    <script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?548e13b07cb36e38bfd73870368a0253";
+		  var s = document.getElementsByTagName("script")[0];
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+</head>
+<body class="" data-ty-nickname="" data-ty-id="">
+<svg class="kap-loading-icon" version="1.1" id="ty_ring" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+<path fill="#FFF" d="M32,62.497C15.184,62.497,1.503,48.816,1.503,32S15.184,1.503,32,1.503
+    c16.816,0,30.497,13.681,30.497,30.497c0,1.154-0.935,2.089-2.089,2.089c-1.154,0-2.089-0.935-2.089-2.089
+    C58.318,17.488,46.512,5.682,32,5.682C17.488,5.682,5.682,17.488,5.682,32S17.488,58.318,32,58.318
+    c8.024,0,15.512-3.599,20.542-9.876c0.722-0.9,2.037-1.045,2.937-0.323c0.9,0.722,1.045,2.036,0.323,2.937
+    C49.974,58.327,41.299,62.497,32,62.497z"/>
+</svg>
+
+<div id="page1" class="kap-page kap-page-current">
+<!-- 微信扫一扫功能 -->
+  <!--  <div class="btn" style="padding:10px; margin: 10vw auto; background-color: blue; width:100px; font-size: 14px; text-align: center;color:#fff;">扫一扫</div> -->
+<!-- 微信扫一扫功能 -->
+<!-- <div class="img"></div> -->
+   <!--  <form>
+      <input type="file" id="avatar" name="avatar">
+      <button type="button">保存</button>
+    </form> -->
+    <button>回调一个函数</button>
+</div>
+
+<div id="page2" class="kap-page">
+
+</div>
+
+
+
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="http://www.tongyou.la/kap/1.67/scripts/kap.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="RF_H5_SDK.js"></script>
+<script type="text/javascript">
+ var onSuccessOpenid = function(data, username) {
+   rf_open_id=data.open_id;
+   listSign(data.open_id);
+  }
+
+  function getOpenid() {
+
+    $.get("data.json",function(result) {
+     if(result.code!=200){
+      $("#errspan").html(result.msg);
+     }else{
+      var clientTicket=result.data;
+      RF_GetOpenUID(clientTicket, onError,onSuccessOpenid);
+     }
+    }, "json");
+  }
+  funciton RF_GetOpenUID(a,b,callback){
+    var num = a+b;
+    callback(num);
+  }
+</script>
+</body>
+</html>

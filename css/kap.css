@@ -1,0 +1,84 @@
+@charset "utf-8";
+/* kap */
+/* icon loading */
+@-ms-keyframes kap_ani_rotate{
+	0%{ -ms-transform:rotate(0deg);}
+	100%{-ms-transform:rotate(360deg);}
+}
+@-webkit-keyframes kap_ani_rotate{
+	0%{ -webkit-transform:rotate(0deg);}
+	100%{-webkit-transform:rotate(360deg);}
+}
+.kap-loading-icon{border:none; -webkit-animation:kap_ani_rotate 0.5s infinite linear; -ms-animation:kap_ani_rotate 0.5s infinite linear; animation:kap_ani_rotate 0.5s infinite linear; width:32px; height:32px; position:fixed;z-index:9999; left:50%; top:50%; display:none; margin-left:-16px; margin-top:-16px;}
+.kap-loading .kap-loading-icon{display:block;}
+.kap-loading:before{content:""; position:fixed; left:0px; top:0px; width:100%; height:100%; background-color:rgba(0,0,0,0.7); z-index:9999;}
+
+/* 动画 */
+@-ms-keyframes kap_ani_slidein{
+	0%{ -ms-transform:translateX(-100%);}
+	100%{-ms-transform:translateX(0);}
+}
+@-webkit-keyframes kap_ani_slidein{
+	0%{ -webkit-transform:translateX(-100%);}
+	100%{-webkit-transform:translateX(0);}
+}
+.kap-ani-slidein{-webkit-animation:kap_ani_slidein 0.2s 1 ease-out; -ms-animation:kap_ani_slidein 0.2s 1 ease-out; animation:kap_ani_slidein 0.2s 1 ease-out; }
+@-ms-keyframes kap_ani_slideout{
+	0%{ -ms-transform:translateX(0);}
+	100%{-ms-transform:translateX(-100%);}
+}
+@-webkit-keyframes kap_ani_slideout{
+	0%{ -webkit-transform:translateX(0);}
+	100%{-webkit-transform:translateX(-100%);}
+}
+.kap-ani-slideout{-webkit-animation:kap_ani_slideout 0.2s 1 ease-in; -ms-animation:kap_ani_slideout 0.2s 1 ease-in; animation:kap_ani_slideout 0.2s 1 ease-in; }
+
+/* 竖屏检测 */
+@media screen and (orientation:portrait) {
+
+}
+/* 横屏检测
+@media screen and (orientation:landscape) {
+	body:before{
+		content:""; position:fixed; left:0px; top:0px; width:100%; height:100%; z-index:99999;
+		background:url(kap_screen_orientation.png) center 50% no-repeat rgba(0,0,0,0.7); background-size:100px 100px;
+	}
+	body.kap-loading .kap-loading-icon{
+		left:auto;
+		top:auto;
+		right:10px;
+		bottom:10px;
+		margin:0px;
+	}
+} */
+
+body{-webkit-tap-highlight-color:rgba(0,0,0,0);}
+.kap-page{position:absolute; width:100%; min-height:100%; display:none;}
+.kap-page-default{display:block;}
+
+.kap-mask{ position:fixed; width:100%; height:100%; background-color:rgba(0,0,0,0.7); z-index:9000;}
+.kap-popwin{position:fixed; z-index:90001; width:100%; height:100%; left:0px; top:0px; }
+.kap-popwin .kap-win{position:absolute;  background-color:#fff; box-shadow:0px 0px 8px rgba(0,0,0,0.5); color:#444; line-height:40px; left:50%; top:50%; font-size:14px; overflow:hidden; border-radius:2px;}
+.kap-popwin .kap-title{padding:0px 10px;}
+.kap-popwin .kap-hitarea{position:absolute; left:0px; top:0px; width:100%; height:100%;  background-color:rgba(0,0,0,0.1);}
+.kap-popwin .kap-content{line-height:24px; font-size:14px; padding:0px 10px;}
+.kap-popwin .kap-btn-wrap{ height:50px; line-height:50px; text-align:center;  position:absolute; left:0px; bottom:0px; width:100%; border-top:1px solid #f0f0f0;}
+.kap-popwin a.kap-btn-submit,.kap-popwin a.kap-btn-submit:visited{ width:50%; height:50px; text-align:center; display:inline-block; text-decoration:none; color:inherit;}
+.kap-popwin a.kap-btn-cancel,.kap-popwin a.kap-btn-cancel:visited{ width:50%; height:50px; text-align:center; display:inline-block; text-decoration:none; color:inherit;}
+.kap-popwin a.kap-btn-submit:active,.kap-popwin a.kap-btn-cancel:active{ background-color:#333}
+
+.kap-alert .kap-content{line-height:24px; font-size:16px; padding:30px 10px; text-align:center;}
+.kap-alert .kap-btn-cancel{ width:100%; height:50px; text-align:center; display:inline-block;}
+
+.kap-lockwin{position:fixed; z-index:90002; width:100%; height:100%; left:0px; top:0px;}
+.kap-lockwin .kap-hitarea{position:absolute; left:0px; top:0px; width:100%; height:100%;}
+
+.kap-lockwin .kap-win{position:absolute; background-color:rgba(0,0,0,0.7); box-shadow:0px 0px 8px rgba(0,0,0,0.5); color:#FFF; line-height:40px; left:0px; bottom:0px;  width:100%;}
+.kap-lockwin .kap-content{line-height:24px; font-size:14px; padding:0px 10px; }
+
+.kap-select{display:inline-block; position:relative;}
+.kap-select select:focus{outline:none;}
+
+.kap-canvas-stage{display: block; width: 100%;}
+
+.kap-share{ display:block; position:fixed; left:0px; top:0px; width:100%; height:100%; background:url(share_top.png) center top no-repeat rgba(0,0,0,0.7); background-size:100% auto; z-index:8888;}
